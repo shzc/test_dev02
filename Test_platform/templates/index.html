@@ -1,0 +1,29 @@
+<!--继承base.html头尾-->
+{% extends "base.html" %}
+{% block base %}
+    <div style=" height:525px;background-image:url(https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg)">
+        <div class="container" style="width:300px; ">
+
+      <form class="form-signin" action="/index/" method="post">
+        <h2 class="form-signin-heading"
+            style="text-align:center">
+            接口测试平台
+        </h2>
+        <label for="inputUsername" class="sr-only">账号</label>
+        <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" >
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password">
+<!--        <div class="checkbox">-->
+<!--          <label>-->
+<!--            <input type="checkbox" value="remember-me"> Remember me-->
+<!--          </label>-->
+<!--        </div>-->
+          <div style="color:red"> {{ error }}</div>
+        {% csrf_token %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+
+    </div>
+    </div>
+
+{% endblock %}
